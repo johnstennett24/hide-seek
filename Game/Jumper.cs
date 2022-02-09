@@ -6,69 +6,71 @@ namespace jumper
     {
         public void display(int track)
         {
+            TerminalService ts = new TerminalService();
             if (track == 0)
             {
-                Console.WriteLine("  ___  ");
-                Console.WriteLine(" /___\\ ");
-                Console.WriteLine(" \\   / ");
-                Console.WriteLine("  \\ /  ");
-                Console.WriteLine("   0   ");
-                Console.WriteLine("  /|\\  ");
-                Console.WriteLine("  / \\  ");
-                Console.WriteLine("       ");
-                Console.WriteLine("^^^^^^^");
-                Console.WriteLine("       ");
+                ts.WriteText("  ___  ");
+                ts.WriteText(" /___\\ ");
+                ts.WriteText(" \\   / ");
+                ts.WriteText("  \\ /  ");
+                ts.WriteText("   0   ");
+                ts.WriteText("  /|\\  ");
+                ts.WriteText("  / \\  ");
+                ts.WriteText("       ");
+                ts.WriteText("^^^^^^^");
+                ts.WriteText("       ");
             }
             else if (track == 1)
             {
-                Console.WriteLine(" /___\\ ");
-                Console.WriteLine(" \\   / ");
-                Console.WriteLine("  \\ /  ");
-                Console.WriteLine("   0   ");
-                Console.WriteLine("  /|\\  ");
-                Console.WriteLine("  / \\  ");
-                Console.WriteLine("       ");
-                Console.WriteLine("^^^^^^^");
-                Console.WriteLine("       ");
+                ts.WriteText(" /___\\ ");
+                ts.WriteText(" \\   / ");
+                ts.WriteText("  \\ /  ");
+                ts.WriteText("   0   ");
+                ts.WriteText("  /|\\  ");
+                ts.WriteText("  / \\  ");
+                ts.WriteText("       ");
+                ts.WriteText("^^^^^^^");
+                ts.WriteText("       ");
             }
             else if (track == 2)
             {
-                Console.WriteLine(" \\   / ");
-                Console.WriteLine("  \\ /  ");
-                Console.WriteLine("   0   ");
-                Console.WriteLine("  /|\\  ");
-                Console.WriteLine("  / \\  ");
-                Console.WriteLine("       ");
-                Console.WriteLine("^^^^^^^");
-                Console.WriteLine("       ");
+                ts.WriteText(" \\   / ");
+                ts.WriteText("  \\ /  ");
+                ts.WriteText("   0   ");
+                ts.WriteText("  /|\\  ");
+                ts.WriteText("  / \\  ");
+                ts.WriteText("       ");
+                ts.WriteText("^^^^^^^");
+                ts.WriteText("       ");
             }
             else if (track == 3)
             {
-                Console.WriteLine("  \\ /  ");
-                Console.WriteLine("   0   ");
-                Console.WriteLine("  /|\\  ");
-                Console.WriteLine("  / \\ ");
-                Console.WriteLine("       ");
-                Console.WriteLine("^^^^^^^");
-                Console.WriteLine("       ");
+                ts.WriteText("  \\ /  ");
+                ts.WriteText("   0   ");
+                ts.WriteText("  /|\\  ");
+                ts.WriteText("  / \\  ");
+                ts.WriteText("       ");
+                ts.WriteText("^^^^^^^");
+                ts.WriteText("       ");
             }
             else if (track == 4)
             {
-                Console.WriteLine("   X   ");
-                Console.WriteLine("  /|\\  ");
-                Console.WriteLine("  / \\  ");
-                Console.WriteLine("       ");
-                Console.WriteLine("^^^^^^^");
-                Console.WriteLine("       ");
+                ts.WriteText("   X   ");
+                ts.WriteText("  /|\\  ");
+                ts.WriteText("  / \\  ");
+                ts.WriteText("       ");
+                ts.WriteText("^^^^^^^");
+                ts.WriteText("       ");
             }
             else
             {
-                Console.WriteLine("ERROR");
+                ts.WriteText("ERROR");
             }
         }
     }
 
-    public class Program
+    // Just for testing.
+    /*public class Program
     {
         public static void Main(string[] args)
         {
@@ -80,3 +82,4 @@ namespace jumper
         }
     }
 }
+*/
