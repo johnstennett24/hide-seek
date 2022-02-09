@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace jumper
 {
@@ -9,28 +10,44 @@ namespace jumper
     /// </para>
     /// </summary>
 
-    public class Player
+    public class SecretWord
     {
-        private List<string> wordList = new List();
+        private List<string> wordList = new List<string>()
+        {
+            "peanuts","carrots","cork","air","sidewalk","cat","puddle","packet","eraser","toilet","flowers","book","bottle","tree","coasters","watch","soda","headphones","drill",
+            "tissue","picture","clippers","keyboard","clock","leg","car","candle","desk","stick","card","chain","door","keys","water","cookie","sand","shoes","shampoo","house",
+            "twister","note","nail","bag","photo","glasses","television","mop","floor","wallet","block","tv","blanket","box","plastic","chalk","controller","bottle","apple","rubber",
+            "magnet","lamp","bracelet","pants","knife","mouse","outlet","shoe","paper","shawl","spring","balloon","paper","paint","lotion","ring","tooth","sofa","glass","stockings",
+            "needle","drawer","purse","seat","white","bananas","hanger","shade","soap","chocolate","food","window","thread","pen","canvas","eye","hair","button"
+        };
+        private List<string> guessList = new List<string>();
+        
         private bool checker = True;
 
-        public Player()
-        {
+        private var secretWord = "";
 
-        }
+        public SecretWord()
+        {
+            int index = random.Next(wordList.Count());
+            secretWord = wordList[index];
+        }   
 
         public void letterTracker(string letter)
         {
-            if (wordList.Contains(letter))
+            if (guessList.Contains(letter))
             {
                 checker = False;
                 return checker;
             }
             else
             {
-                wordList.add(letter);
+                guessList.add(letter);
                 checker = True;
             }
+
+        public 
+
+        
         }
 
     }
