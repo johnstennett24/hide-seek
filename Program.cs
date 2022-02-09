@@ -1,7 +1,7 @@
 ﻿using jumper.Game;
 
 
-namespace hilo
+namespace jumper
 {
     /// <summary>
     /// The program's entry point.
@@ -14,8 +14,8 @@ namespace hilo
         /// <param name="args">The given arguments.</param>
         static void Main(string[] args)
         {
-            Dealer dealer = new Dealer();
-            dealer.StartGame();
+            Director director = new Director();
+            director.StartGame();
         }
     }
 }
