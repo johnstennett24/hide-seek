@@ -2,7 +2,7 @@
 
 namespace jumper
 {
-    public class chute
+    public class Jumper
     {
         public void display(int track)
         {

@@ -1,14 +1,15 @@
 using System;
 using System.Collections.Generic;
 
-namespace Jumpergame
+namespace jumper.game
 {
     public class Director
     {
-        List<jumper> jumper = new List<jumper>();
+        private Jumper jumper = new Jumper();
         bool is_playing = true;
-        int score = 0;
-        int total_score = 0;
+        int wordTracker = 0;
+
+        
     
         
         public Director()
