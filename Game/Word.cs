@@ -36,10 +36,9 @@ namespace jumper
             {
                 guessWord.Add("_");
             }
-        }
         }   
 
-        public void letterTracker(string letter)
+        public bool letterTracker(string letter)
         {
             if (guessList.Any(letter))
             {
@@ -51,8 +50,9 @@ namespace jumper
                 guessList.add(letter);
                 checker = True;
             }
+        }
 
-        public string secretWordStatus(string letter, string secretWord, ist guessWord)
+        public string secretWordStatus(string letter, string secretWord, List guessWord)
         {
             List<int> index = new List<int>();
             for (int i = 0; i < secretWord.Length; i++)
@@ -63,9 +63,6 @@ namespace jumper
                 }
 
             }           
-        }
-
-        
         }
 
     }
