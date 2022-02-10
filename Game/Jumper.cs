@@ -68,6 +68,7 @@ namespace jumper
             }
         }
     }
+}
 
     // Just for testing.
     /*public class Program
