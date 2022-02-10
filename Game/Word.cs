@@ -24,27 +24,24 @@ namespace jumper
         
         private bool checker = True;
 
-        private string secretWord;
-
+        var random = new Random();
         int index = random.Next(wordList.Count());
-        secretWord = wordList[index];
+        private string secretWord = wordList[index];
 
         private List<string> guessWord = new List<string>();
-        for (int i = 0; i < secretWord.Lenth; i++)
-        {
-            guessWord.add
-        }
-
+        
         public SecretWord()
         {   
+            for (int i = 0; i < secretWord.Length; i++)
+            {
+                guessWord.Add("_");
+            }
         }
-
-
         }   
 
         public void letterTracker(string letter)
         {
-            if (guessList.Contains(letter))
+            if (guessList.Any(letter))
             {
                 checker = False;
                 return checker;
@@ -55,30 +52,22 @@ namespace jumper
                 checker = True;
             }
 
-        public string displaySecretWord()
+        public string secretWordStatus(string letter, string secretWord, ist guessWord)
         {
+            List<int> index = new List<int>();
+            for (int i = 0; i < secretWord.Length; i++)
+            {   
+                if (letter == secretWord[i])
+                {
+                    guessWord[i] = letter;
+                }
 
+            }           
         }
 
         
         }
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
