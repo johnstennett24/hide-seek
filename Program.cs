@@ -1,5 +1,4 @@
-﻿using jumper.Game;
-
+﻿using System;
 
 namespace jumper
 {
@@ -15,7 +14,7 @@ namespace jumper
         static void Main(string[] args)
         {
             Director director = new Director();
-            director.StartGame();
+            director.start_game();
         }
     }
 }

@@ -22,7 +22,7 @@ namespace jumper
         };
         private List<string> guessList = new List<string>();
         
-        private bool checker = True;
+        private bool checker = true;
 
         var random = new Random();
         int index = random.Next(wordList.Count());
