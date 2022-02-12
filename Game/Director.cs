@@ -35,6 +35,7 @@ namespace jumper
         public void get_inputs()
         {   
             bool relapse = true;
+            ts.WriteText($"{word.guessWord}");
             jumper.display(tracker);
             while (relapse)
             {
@@ -57,6 +58,10 @@ namespace jumper
             }
 
             word.secretWordStatus(letter);
+            if (!word.secretWord.Contains(letter))
+            {
+                tracker += 1;
+            }
         }
 
         //should display the word and the score.
