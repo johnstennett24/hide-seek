@@ -52,7 +52,7 @@ namespace jumper
             }
         }
 
-        public string secretWordStatus(string letter, string secretWord, List guessWord)
+        public List<string> secretWordStatus(string letter, string secretWord, List<string> guessWord)
         {
             List<int> index = new List<int>();
             for (int i = 0; i < secretWord.Length; i++)
