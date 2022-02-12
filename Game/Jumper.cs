@@ -3,10 +3,11 @@
 namespace jumper
 {
     public class Jumper
-    {
+    {   
+        TerminalService ts = new TerminalService();
         public void display(int track)
         {
-            TerminalService ts = new TerminalService();
+            
             if (track == 0)
             {
                 ts.WriteText("  ___  ");

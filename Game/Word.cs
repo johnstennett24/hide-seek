@@ -25,11 +25,12 @@ namespace jumper
         private bool checker = true;
 
         private int index;
-        private string secretWord;
+        public string secretWord;
 
+        public string letter = " ";
         Random random = new Random();
         
-        private List<string> guessWord = new List<string>();
+        public List<string> guessWord = new List<string>();
         
         public SecretWord()
         {   
@@ -47,18 +48,18 @@ namespace jumper
         {
             if (guessList.Contains(letter))
             {
-                checker = false;
+                checker = true;
                 return checker;
             }
             else
             {
                 guessList.Add(letter);
-                checker = true;
+                checker = false;
                 return checker;
             }
         }
 
-        public void secretWordStatus(string letter, string secretWord, List<string> guessWord)
+        public void secretWordStatus(string letter)
         {
             List<int> index = new List<int>();
             for (int i = 0; i < secretWord.Length; i++)
@@ -68,7 +69,6 @@ namespace jumper
                 {
                     guessWord[i] = letter;
                 }
-
             }           
         }
 

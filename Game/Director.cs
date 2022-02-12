@@ -5,8 +5,16 @@ namespace jumper
 {
     public class Director
     {
+        TerminalService ts = new TerminalService();
+        SecretWord word = new SecretWord();
+        Jumper jumper = new Jumper();
         bool is_playing = true;
-        int score = 0;
+        
+        int tracker = 0;
+        public string letter;
+        private string secretWord;
+        
+        List<string> guessWord = new List<string>();
         
         public Director()
         {
@@ -25,10 +33,18 @@ namespace jumper
 
         //asks the user if what word they want to guess
         public void get_inputs()
-        {
-            SecretWord word = new SecretWord();
-            Console.WriteLine("What letter do you want to guess now(a-z)? ");
-            string jumper_word = Console.ReadLine();
+        {   
+            bool relapse = true;
+            jumper.display(tracker);
+            while (relapse)
+            {
+                letter = ts.ReadText("What letter do you want to guess now?(a-z)");
+                relapse = word.letterTracker(letter);
+                if (relapse)
+                {
+                    ts.WriteText("You already guessed this letter");
+                }
+            }
             is_playing = true;
         }
 
@@ -39,6 +55,8 @@ namespace jumper
             {
                 return;
             }
+
+            word.secretWordStatus(letter);
         }
 
         //should display the word and the score.
@@ -51,7 +69,20 @@ namespace jumper
                 return;
             }
 
-            Jumper jumper = new Jumper();
+            if (tracker == 4)
+            {   
+                jumper.display(tracker);
+                ts.WriteText("You Lost.");
+                ts.WriteText($"The word was {word.secretWord}");
+                is_playing = false;
+            }
+
+            else if(!word.guessWord.Contains("_"))
+            {
+                ts.WriteText("You Won!");
+                ts.WriteText($"The word was {word.secretWord}");
+                is_playing = false;
+            }
         }
     }
 }
