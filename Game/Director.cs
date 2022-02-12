@@ -13,6 +13,8 @@ namespace jumper
         int tracker = 0;
         public string letter;
         private string secretWord;
+
+        private string wordguessed;
         
         List<string> guessWord = new List<string>();
         
@@ -35,7 +37,9 @@ namespace jumper
         public void get_inputs()
         {   
             bool relapse = true;
-            ts.WriteText($"{word.guessWord}");
+            wordguessed = String.Join("",word.guessWord);
+            ts.WriteText($"{wordguessed}");
+            ts.WriteText("");
             jumper.display(tracker);
             while (relapse)
             {
@@ -74,6 +78,7 @@ namespace jumper
                 return;
             }
 
+
             if (tracker == 4)
             {   
                 jumper.display(tracker);
@@ -81,7 +86,7 @@ namespace jumper
                 ts.WriteText($"The word was {word.secretWord}");
                 is_playing = false;
             }
-
+            
             else if(!word.guessWord.Contains("_"))
             {
                 ts.WriteText("You Won!");
